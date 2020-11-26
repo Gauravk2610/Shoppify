@@ -11,5 +11,7 @@ A Ecommerce Website Developed using Django
 ![Screenshot_20201028-105317_Video Player](https://user-images.githubusercontent.com/63660013/100332432-64d46200-2ff7-11eb-9e59-335182aeb75d.jpg)
 ## Check Out
 ![Screenshot_20201028-105329_Video Player](https://user-images.githubusercontent.com/63660013/100332681-b1b83880-2ff7-11eb-84dd-a69a05030aaa.jpg)
+## Cart Details
 ![Screenshot_20201028-105341_Video Player](https://user-images.githubusercontent.com/63660013/100332685-b250cf00-2ff7-11eb-8e92-cb2f12597057.jpg)
+## About Us
 ![Screenshot_20201028-105357_Video Player](https://user-images.githubusercontent.com/63660013/100332690-b381fc00-2ff7-11eb-99e5-121e0d3df023.jpg)
