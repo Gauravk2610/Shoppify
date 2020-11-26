@@ -1,0 +1,98 @@
+{%extends 'shop/base.html' %}
+{% block title%}Contact{%endblock%}
+{%block navcontact%}<li class="active"><a href="/shop/contact" style="text-decoration: none;">Contact</a></li>{%endblock%}
+{% block body%}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Contact</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Contact Section ======= -->
+    <div class="map-section">
+      <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120632.28210286472!2d72.78791510220819!3d19.118233802386587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1601352424706!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="row justify-content-center" data-aos="fade-up">
+
+          <div class="col-lg-10">
+
+            <div class="info-wrap">
+              <div class="row">
+                <div class="col-lg-4 info">
+                  <i class="icofont-google-map"></i>
+                  <h4>Location:</h4>
+                  <p>A108 Mumbai<br>Maharashtra, India</p>
+                </div>
+
+                <div class="col-lg-4 info mt-4 mt-lg-0">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>codegrammed@gmail.com<br>gauravkonde26@gmail.com</p>
+                </div>
+
+                <div class="col-lg-4 info mt-4 mt-lg-0">
+                  <i class="icofont-phone"></i>
+                  <h4>Call:</h4>
+                  <p>+91 9987 8822 11</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        {%if info %}
+        <div class="col col-md-6 mx-7" style="margin-left: 300px; margin-top: 40px; ">
+        <h3 class="my-2 " data-aos="fade-up" >!!{{info}}!!</h3>
+        {% endif%}
+      </div>
+        <div class="row mt-5 justify-content-center" data-aos="fade-up">
+          <div class="col-lg-10">
+            <form action="/shop/contact/" method="post" role="form" >
+              {%csrf_token%}
+              <div class="form-row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validate"></div>
+              </div>
+              <div class="text-center mb-3"><button type="submit" class="btn btn-success">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+{%endblock%}

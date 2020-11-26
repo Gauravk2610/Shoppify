@@ -1,0 +1,32 @@
+{%extends 'shop/base.html'%}
+{%block title%}Delivery Details{%endblock%}
+{%block body%}
+<div class="jumbotron " style="margin-top: 100px; margin-left: 150px; margin-right: 150px;">
+    <div class="form-group col-md-4">
+        <h1 class="display-6">Order Id: EDOC{{order.order_id}}</h1>
+        <p class="lead">Customer's Info</p>
+        <hr class="my-2">
+        <p><strong>Name: </strong>{{order.name}}<br>
+            <strong>Order Date: </strong>{{order.order_place_date}}<br>
+            <strong>State: </strong>{{order.state}}<br>
+            <strong>Address: </strong>{{order.address}}<br>
+            <strong>Zip-Code: </strong>{{order.zip_code}}<br>
+            <strong>Phone: </strong>{{order.phone}}<br></p>
+    </div>
+    <form method="post">
+        {%csrf_token%}
+        <div class="form-group col-md-4">
+            <label for="inputState">Status</label>
+            <select id="inputState" class="form-control" name="status">
+                <option selected>{{order.status}}</option>
+                <option>Order Confirmed</option>
+                <option>Picked Up By The Counter</option>
+                <option>On The Way</option>
+                <option>Order Completed</option>
+            </select>
+            <button type="submit" class="btn btn-success my-3">Submit</button>
+        </div>
+
+    </form>
+</div>
+{%endblock%}

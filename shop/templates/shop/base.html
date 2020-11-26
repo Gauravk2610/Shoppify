@@ -1,0 +1,269 @@
+{% load static%}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title%}Codegrammed{%endblock%}</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/img/logo.jpg' %}" rel="icon">
+  <link href="{% static 'assets/img/logo.jpg'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css'%}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/shop" style="text-decoration: none;"><span>Codegr</span>ammed</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          {%block navhome%}<li><a href="/" style="text-decoration: none;">Home</a></li>{%endblock%}
+
+          {%block navabout%}<li><a href="/shop/about" style="text-decoration: none;">About Us</a>{%endblock%}
+            {%block navteam%}
+          <li><a href="/shop/team" style="text-decoration: none;">Team</a></li>{%endblock%}
+          {%block navcontact%}<li><a href="/shop/contact" style="text-decoration: none;">Contact</a></li>{%endblock%}
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="header-social-links">
+        <a href="https://twitter.com/KondeGaurav" class="twitter" style="text-decoration: none;"><i
+            class="icofont-twitter"></i></a>
+        <a href="https://www.facebook.com/gaurav.konde.71" class="facebook" style="text-decoration: none;"><i
+            class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/codegrammed/" class="instagram" style="text-decoration: none;"><i
+            class="icofont-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/gaurav-konde-51aab6193" class="linkedin" style="text-decoration: none;"><i
+            class="icofont-linkedin"></i></i></a>
+        <a href="/shop/checkout" id="popcart" title="Cart Items" class="fa fa-shopping-cart"
+          style="text-decoration: none; " data-placement="bottom" data-html="true" data-toggle="popover">(<span
+            id="cart">0</span>)</a>
+        <a href="/shop/tracker" title="Order Tracker"><i class="fa fa-truck" aria-hidden="true"></i></a>
+        <a href="/logout" title="logout" style="text-decoration: none;"><i class="fa fa-sign-out"></i></a>
+
+        <!-- <a href="#" class="cart" style="text-decoration: none; " id="popcart" data-container="body" data-html="true" data-toggle="popover" data-placement="bottom"><i class="fa fa-shopping-cart"></i></i>(<span id="cart">0</span>) -->
+        <!-- </a> -->
+      </div>
+
+    </div>
+  </header>
+  {% block body%}{%endblock%}
+  {%block footer%}
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Company</h3>
+            <p>
+              A108, Mumbai, <br>
+              Maharashtra,<br>
+              India <br><br>
+              <strong>Phone:</strong> +91 9987882211<br>
+              <strong>Email:</strong> gauravkonde26@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/shop">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/shop/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/shop/team">Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/shop/contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a>Python</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>AL & ML</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Computer Vision</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Web Automation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a>Web Development</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Do Subscribe To Us For The Latest Updatest About Technology</p>
+            <form action="subscriber" method="post">{%csrf_token%}
+              <input type="email" name="email" placeholder="codegrammed@gmail.com" required><input type="submit"
+                value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Codegrammed</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/company-free-html-bootstrap-template/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  {%endblock%}
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <script src="{%static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{%static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+  <script src="{%static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'assets/vendor/aos/aos.js'%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%static 'assets/js/main.js' %}"></script>
+  <script>
+    if (localStorage.getItem('cart') == null) {
+      var cart = {};
+      // updateCart(cart);
+    }
+    else {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+    var sum = 0;
+    for (var item in cart) {
+      if (cart[item][0] == 0) {
+        delete cart[item];
+        updateCart(cart);
+        // console.log(item);
+      }
+      else {
+        // console.log(cart[item])
+        sum = sum + cart[item][0];
+        // console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = sum;
+      }
+    }
+    // if add to cart button is clicked
+    $(' .cart').click(function () {
+      // console.log("clicked")
+      // var idstr = null;
+      var idstr = this.id.toString();
+      // console.log(idstr);
+      // var cart = [];
+      if (cart[idstr] != undefined) {
+        qty = cart[idstr][0] + 1;
+
+      }
+      else {
+        qty = 1;
+        name = document.getElementById('name' + idstr).innerHTML;
+        price = document.getElementById('price' + idstr).innerHTML;
+        // console.log("IDSTr")
+        price = price.slice(36,)
+        cart[idstr] = [qty, name, price];
+      }
+      updateCart(cart);
+      // console.log(cart);
+
+    });
+
+    // popver to cart
+    $('#popcart');
+    updatePopover(cart);
+    function updatePopover() {
+      // console.log("We are inside popover");
+      var popStr = ""
+      popStr = popStr + "<h5>Cart For Your items</h5><div class=' mx-2 my-2'>";
+      var i = 1;
+      for (var item in cart) {
+        popStr = popStr + "<b>" + i + "</b>. ";
+        i = i + 1;
+      }
+      popStr = popStr + "</div>"
+      document.getElementById('popcart').setAttribute('data-content', popStr);
+    }
+    function updateCart(cart) {
+      var sum = 0
+      for (var item in cart) {
+        sum = sum + cart[item][0];
+        // console.log(cart[item][0]);
+
+        // console.log(item);
+        // for (var subitems in c)
+        // console.log("1")
+        // cart.indexOf(cart);
+        // console.log(typeof cart);
+
+        // delete cart ['pr3'];
+        if (sum != 0) {
+          document.getElementById("div" + "pr{{product_id.product_id}}").innerHTML = "<button id='minus" + item + "'class='btn btn-outline-success btn-lg my-4 minus'>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "'class='btn btn-outline-success btn-lg plus'>+</button>";
+        }
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      document.getElementById('cart').innerHTML = sum;
+      updatePopover(cart);
+    }
+
+    // if plus or minus button is placed
+    $('.divpr').on("click", "button.minus", function () {
+      // console.log("minus clicked");
+      a = this.id.slice(7,);
+      cart['pr' + a][0] = cart['pr' + a][0] - 1;
+      cart['pr' + a][0] = Math.max(0, cart['pr' + a][0])
+      document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+      updateCart(cart);
+    });
+    $('.divpr').on("click", "button.plus", function () {
+      // console.log("plus clicked");
+      a = this.id.slice(6,);
+      cart['pr' + a][0] = cart['pr' + a][0] + 1;
+      document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+      updateCart(cart);
+    });   
+  </script>
+  {% block js%}{%endblock%}
+</body>
+
+</html>

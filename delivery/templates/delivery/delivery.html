@@ -1,0 +1,40 @@
+{%extends 'shop/base.html'%}
+{%block title %}Delivery{%endblock%}
+
+{%block body%}
+{% if nthing%}
+<h3 style="margin-top: 100px;">
+  <div class="jumbotron">
+    <h1 class="display-4" style="text-align: center;">Nothing to Deliver</h1>
+    </div>
+</h3>
+{%block footer%}
+{%endblock%}
+{%endif%}
+{%for cat in category%}
+<h3 style="text-align: center; margin-top: 80px;">{{cat}}</h3>
+<hr>
+<div class="row mx-4">
+  {{params}}
+  <!-- {%for order_list in order_list %}    -->
+  {%for i in order_list%}
+  {%if cat == i.state %}
+  <div class="col-sm-3 ">
+    <div class="card">
+      <div class="card-body ">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p class="card-text"><strong> Username: </strong>{{i.user}}<br> <strong>Customer Order</strong>:
+          {{i.items_json}}<br> <strong>Email</strong>: {{i.email}}<br> <strong>Contact No</strong>: {{i.phone}}<br>
+          <strong>Customer Address</strong>: {{i.address}}<br> <strong>zip code</strong>: {{i.zip_code}}</p>
+
+        <a href="/delivery/{{i.order_id}}" class="btn btn-primary"><span class="spinner-border spinner-border-sm"
+            role="status" aria-hidden="true"></span> Go Deliver</a>
+      </div>
+    </div>
+  </div>
+  {%endif%}
+  {%endfor%}
+  <!-- {%endfor%} -->
+</div>
+{%endfor%}
+{%endblock%}

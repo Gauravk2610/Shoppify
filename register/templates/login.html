@@ -1,0 +1,317 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/custom.css"> -->
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="{%static 'assets/ico/favicon.png'%}">
+
+</head>
+<header>
+
+</header>
+
+<body>
+    {% for message in messages %}
+
+    <div class="alert alert-warning">
+        <a class="close" href="#" data-dismiss="alert">×</a>
+
+        {{ message }}
+
+    </div>
+    {% endfor %}
+    <div class="container ">
+        <div class="row">
+            <div class="login-container col-lg-4 col-md-6 col-sm-8 col-xs-12">
+                <div class="login-title text-center">
+                    <h2><span>Codegr<strong>ammed</strong></span></h2>
+                </div>
+                <div class="login-content">
+                    <div class="login-header ">
+                        <h3><strong>Shoppify</strong></h3>
+                        <h5>Sign In To Enjoy Your Shopping</h5>
+                    </div>
+                    <div class="login-body">
+                        <form role="form" action="/login" method="post" class="login-form">
+                            {%csrf_token%}
+                            <div class="form-group ">
+                                <div class="pos-r">
+                                    <input id="form-username" type="text" name="form-username" placeholder="Username..."
+                                        class="form-username form-control">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="pos-r">
+                                    <input id="form-password" type="password" name="form-password"
+                                        placeholder="Password..." class="form-password form-control">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                            </div>
+                            <div class="form-group text-right">
+                                <a href="#" class="bold"> Forgot password?</a>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success form-control"><strong>Sign
+                                        in</strong></button>
+                            </div>
+                            <div class="login-footer text-center template">
+                                <h5>Don't have an account?<a class="bold" data-toggle="modal"
+                                        data-target="#staticBackdrop" style="cursor: pointer;"> Sign up </a> </h5>
+                            </div>
+                        </form>
+
+                    </div> <!-- end  login-body -->
+                </div><!-- end  login-content -->
+            </div> <!-- end  login-container -->
+
+        </div>
+    </div><!-- end container -->
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+                    <h3 class="modal-title" id="staticBackdropLabel">Sign Up</h3>
+                </div>
+                <div class="modal-body">
+                    <script>
+                        // Function to check Whether both passwords 
+                        // is same or not. 
+                        function checkPassword(form) {
+                            password1 = form.pass1.value;
+                            password2 = form.pass2.value;
+
+                            // If password not entered 
+                            if (password1 == '')
+                                alert("Please enter Password");
+
+                            // If confirm password not entered 
+                            else if (password2 == '')
+                                alert("Please enter confirm password");
+
+                            // If Not same return False.     
+                            else if (password1 != password2) {
+                                alert("\nPassword did not match: Please try again...")
+                                return false;
+                            }
+
+                            // If same return True. 
+                            else {
+                                alert("Password Match: Welcome to Shoppify")
+                                return true;
+                            }
+                        } 
+                    </script>
+                    <form action="signup" method="post" onSubmit="return checkPassword(this)">
+                        {%csrf_token%}
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" name="username" id="username"
+                                placeholder="Choose A Unique Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" class="form-control" name="fname" id="fname" placeholder="First Name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name"
+                                required>
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="inputtype">Type</label>
+                            <select id="inputtype" class="form-control" name="type">
+                                <option selected>Customer</option>
+                                <option>Client</option>
+                            </select>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="name@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass1">Password</label>
+                            <input type="password" class="form-control" id="pass1" name="pass1"
+                                placeholder="Enter Your Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">Confirm Password</label>
+                            <input type="password" class="form-control" id="pass2" name="pass2"
+                                placeholder="Confirm Your Password" required>
+                        </div>
+                        <!-- <input type="submit" value="Submit"> -->
+
+                        <input type="submit" value="Sign Up" class="btn btn-success btn-lg btn-block active">
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+<style>
+    body {
+        background: url(https://img.freepik.com/free-photo/product-package-boxes-shopping-bag-cart-with-laptop-online-shopping-delivery-concept_38716-138.jpg?size=626&ext=jpg) #132533 no-repeat center center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .login-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .login-container .login-content {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    .pos-r {
+        position: relative;
+    }
+
+    .login-container .login-header {
+        padding: 10px 30px;
+    }
+
+    .login-container,
+    .login-container a,
+    .login-container input {
+        color: #ffffff;
+    }
+
+    .login-container .login-title span {
+        padding: 10px 20px;
+        display: inline-block;
+        margin-bottom: 20px;
+        text-shadow: -1px 1px 1px rgb(17, 42, 51);
+    }
+
+    .login-container .login-title span strong {
+        color: #0cff34;
+    }
+
+    .login-container .login-body {
+        padding: 30px 30px;
+    }
+
+    .login-container .login-body input.form-control {
+        background: rgba(0, 0, 0, 0.7);
+        height: 50px;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        border-left: 3px solid transparent;
+        font-size: 16px;
+        -o-transition: all .5s;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .login-container .login-body input.form-control:focus {
+        border-color: #1bbd36;
+    }
+
+    .login-container .login-body input.form-control+i {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        font-size: 20px;
+        color: #1bbd36;
+        -o-transition: all .5s;
+        -webkit-transition: all .5s;
+        transition: all .5s;
+    }
+
+    .login-container .login-body input.form-control:focus+i {
+        color: #1bbd36;
+    }
+
+    .login-container .login-body button {
+        height: 50px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+        font-size: 20px;
+    }
+
+    .login-container .login-footer {
+        padding: 20px 0;
+    }
+
+    .template h5 a {
+        color: #0cff34;
+    }
+
+    @media only screen and (max-width: 600px),
+    screen and (max-height: 610px) {
+
+        .login-container {
+            padding: 0px;
+        }
+
+        .login-container .login-title span {
+            padding: 0px;
+            margin-bottom: 10px;
+        }
+
+        .login-container .login-content {
+            background: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .login-header {
+            display: none;
+        }
+
+        .login-container .login-body {
+            padding: 10px 10px;
+        }
+
+        .login-container .login-footer {
+            padding: 0;
+        }
+    }
+
+    @media only screen and (max-height: 400px) {
+        .login-container {
+            position: static;
+            transform: none;
+            padding: 0;
+        }
+    }
+</style>
