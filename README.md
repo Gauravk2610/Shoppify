@@ -23,7 +23,7 @@ A Ecommerce Website Developed using Django
 
 ## Details
 
-Frontend using bootstrap , Html, Css
+Frontend using bootstrap , Html, Css & Javascript
 
 Backend using Django 
 
