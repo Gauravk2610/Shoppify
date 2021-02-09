@@ -15,3 +15,16 @@ A Ecommerce Website Developed using Django
 ![Screenshot_20201028-105341_Video Player](https://user-images.githubusercontent.com/63660013/100332685-b250cf00-2ff7-11eb-8e92-cb2f12597057.jpg)
 ## About Us
 ![Screenshot_20201028-105357_Video Player](https://user-images.githubusercontent.com/63660013/100332690-b381fc00-2ff7-11eb-99e5-121e0d3df023.jpg)
+
+## Requirements
+`python 3.7 or higher`
+
+`pip install Django`
+
+## Details
+
+Frontend using bootstrap , Html, Css
+
+Backend using Django 
+
+Sqlite3 Backend
